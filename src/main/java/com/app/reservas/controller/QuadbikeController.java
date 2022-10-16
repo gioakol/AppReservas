@@ -32,7 +32,7 @@ public class QuadbikeController {
         return quadbikeService.save(p);
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Quadbike update(@RequestBody Quadbike p) {
         return quadbikeService.update(p);
