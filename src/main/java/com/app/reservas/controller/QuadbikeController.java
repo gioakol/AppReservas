@@ -11,7 +11,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Quadbike")
-@CrossOrigin(origins = "*")
 public class QuadbikeController {
     @Autowired
     private QuadbikeService quadbikeService;

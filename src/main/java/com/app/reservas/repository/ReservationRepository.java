@@ -34,7 +34,7 @@ public class ReservationRepository {
     }
 
     public List<Reservation> getByDate(Date dateStart, Date dateFinish) {
-        return reservationCrudRepository.getByDate(dateStart, dateFinish);
+        return reservationCrudRepository.findAllByStartDateAfterAndStartDateBefore(dateStart, dateFinish);
     }
 
     public List<Reservation> getByStatus(String status) {
