@@ -3,7 +3,6 @@ package com.app.reservas.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "message")
