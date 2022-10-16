@@ -22,12 +22,12 @@ public class QuadbikeController {
     }
 
     @GetMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
     public Optional<Quadbike> getById(@PathVariable("id") int id) {
         return quadbikeService.getById(id);
     }
 
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Quadbike save(@RequestBody Quadbike p) {
         return quadbikeService.save(p);
     }

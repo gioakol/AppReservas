@@ -22,12 +22,12 @@ public class MessageController {
     }
 
     @GetMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
     public Optional<Message> getById(@PathVariable("id") int id) {
         return messageService.getById(id);
     }
 
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Message save(@RequestBody Message p) {
         return messageService.save(p);
     }

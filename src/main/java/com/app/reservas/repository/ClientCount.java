@@ -3,12 +3,20 @@ package com.app.reservas.repository;
 import com.app.reservas.entities.Client;
 
 public class ClientCount {
-    private Client client;
     private Long total;
-
+    private Client client;
 
     public ClientCount(Long total, Client client) {
         this.total = total;
+        this.client = client;
+    }
+
+    
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
         this.client = client;
     }
 
@@ -18,13 +26,5 @@ public class ClientCount {
 
     public void setTotal(Long total) {
         this.total = total;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
     }
 }
