@@ -14,7 +14,7 @@ public class Reservation {
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
-    private String status = "created";
+    private String status;
     @ManyToOne
     @JoinColumn(name = "quadbikeId")
     @JsonIgnoreProperties("reservations")

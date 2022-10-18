@@ -1,6 +1,7 @@
 package com.app.reservas.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import javax.persistence.*;
 import java.util.List;
@@ -15,6 +16,7 @@ public class Client {
     private String password;
     private String name;
     private Integer age;
+    private Boolean esAdmin;
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
     @JsonIgnoreProperties("client")
     private List<Message> messages;
@@ -61,6 +63,14 @@ public class Client {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Boolean getEsAdmin() {
+        return esAdmin;
+    }
+
+    public void setEsAdmin(Boolean esAdmin) {
+        this.esAdmin = esAdmin;
     }
 
     public List<Message> getMessages() {

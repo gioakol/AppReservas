@@ -1,6 +1,7 @@
 package com.app.reservas.service;
 
 import com.app.reservas.entities.Client;
+import com.app.reservas.entities.Reservation;
 import com.app.reservas.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,14 @@ public class ClientService {
         return clientRepository.getById(id);
     }
 
+    public boolean getByEmail(String email) {
+        return clientRepository.getByEmail(email);
+    }
+
+    public List<Client> getByEmailAndPassword(String email, String password) {
+        return clientRepository.getByEmailAndPassword(email, password);
+    }
+
     public Client save(Client p) {
         if (p.getIdClient() != null) {
             Optional<Client> e = clientRepository.getById(p.getIdClient());
@@ -39,6 +48,9 @@ public class ClientService {
         if(p.getIdClient() != null) {
             Optional<Client> e = clientRepository.getById(p.getIdClient());
             if (e.isPresent()){
+                if(p.getEmail() != null) {
+                    e.get().setEmail(p.getEmail());
+                }
                 if(p.getName() != null) {
                     e.get().setName(p.getName());
                 }

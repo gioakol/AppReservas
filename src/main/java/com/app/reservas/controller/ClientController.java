@@ -26,6 +26,16 @@ public class ClientController {
         return clientService.getById(id);
     }
 
+    @GetMapping("/email/{email}")
+    public boolean getByEmail(@PathVariable("email") String email) {
+        return clientService.getByEmail(email);
+    }
+
+    @GetMapping("/user/{email}/{password}")
+    public List<Client> getByEmailAndPassword(@PathVariable("email") String email, @PathVariable("password") String password) {
+        return clientService.getByEmailAndPassword(email, password);
+    }
+
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Client save(@RequestBody Client p) {
@@ -39,7 +49,6 @@ public class ClientController {
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id")int id){
         return clientService.delete(id);
     }
